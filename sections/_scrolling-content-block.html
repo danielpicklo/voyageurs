@@ -1,0 +1,305 @@
+<!--
+  templateType: section
+  label: Scrolling content block
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/scrolling-content-block.png
+  description: "A section containing a scrolling content block alongside static content blocks."
+-->
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "72px",
+      "top" : "0px"
+    },
+    "mobile" : {
+      "bottom" : "2rem",
+      "top" : "0px"
+    }
+  },
+  full_width=false
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_column
+        offset=0,
+        width=7,
+        padding={
+          "default" : {
+            "bottom" : "0px",
+            "right" : "64px"
+          },
+          "mobile" : {
+            "bottom" : "32px",
+            "right" : "0px"
+          }
+        }
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/content-block",
+            offset=0,
+            width=12,
+            eyebrow="",
+            icon={
+              "name" : ""
+            },
+            settings={
+              "animation_type" : "fade-up",
+              "scroll_lock" : true
+            },
+            style={
+              "fonts" : { }
+            },
+            title="Where Are You on Your <em>Growth Journey?</em>"
+          %}
+            {% module_attribute "content" %}
+              <p style="font-size: 22px;">Our Pathfinder Framework helps us meet clients where they are to provide clear next steps, smart systems, and strategic growth.</p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+      {% dnd_column
+        offset=7,
+        width=5,
+        padding={
+          "default" : {
+            "left" : "0px",
+            "right" : "0px"
+          }
+        }
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/content-block",
+            offset=0,
+            width=12,
+            eyebrow="Start Strong",
+            icon={
+              "name" : ""
+            },
+            settings={
+              "animation_type" : "fade-up"
+            },
+            title=""
+          %}
+            {% module_attribute "content" %}
+              <h3>Build it right <em>from the beginning.</em></h3>
+              <p>Launch your brand, website, and CRM with a clear strategy and scalable structure. We help you lay the foundation with smart positioning, strong systems, and intentional design.</p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/content-block",
+            offset=0,
+            width=12,
+            custom_icon={
+              "alt" : "Ideal For Icon",
+              "height" : 48,
+              "loading" : "lazy",
+              "max_height" : 48,
+              "max_width" : 48,
+              "size_type" : "exact",
+              "src" : "https://49609093.fs1.hubspotusercontent-na1.net/hubfs/49609093/Ideal%20For%20Icon.svg",
+              "width" : 48
+            },
+            eyebrow="",
+            icon={
+              "name" : ""
+            },
+            icon_style="image",
+            settings={
+              "animation_type" : "fade-up",
+              "orientation" : "row"
+            },
+            style={
+              "alignment" : "left"
+            },
+            title=""
+          %}
+            {% module_attribute "content" %}
+              <p><span><strong>Ideal for:</strong> startups, new teams, or businesses launching a new offer.</span></p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module
+            path="@hubspot/divider",
+            offset=0,
+            width=12,
+            styles={
+              "line" : {
+                "color" : {
+                  "color" : "#3e2c47",
+                  "opacity" : 100
+                }
+              },
+              "size" : {
+                "width" : 100
+              },
+              "spacing" : {
+                "spacing" : {
+                  "margin" : {
+                    "bottom" : {
+                      "units" : "px",
+                      "value" : 24
+                    },
+                    "top" : {
+                      "units" : "px",
+                      "value" : 24
+                    }
+                  }
+                }
+              }
+            }
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/content-block",
+            offset=0,
+            width=12,
+            eyebrow="Scale Smart",
+            icon={
+              "name" : ""
+            },
+            settings={
+              "animation_type" : "fade-up"
+            },
+            title=""
+          %}
+            {% module_attribute "content" %}
+              <h3>Optimize what’s <em>already working.</em></h3>
+              <p>If you’ve outgrown your current processes, it’s time to streamline. We help you simplify systems, improve performance, and turn tools like HubSpot into growth engines.</p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/content-block",
+            offset=0,
+            width=12,
+            custom_icon={
+              "alt" : "Ideal For Icon",
+              "height" : 48,
+              "loading" : "lazy",
+              "max_height" : 48,
+              "max_width" : 48,
+              "size_type" : "exact",
+              "src" : "https://49609093.fs1.hubspotusercontent-na1.net/hubfs/49609093/Ideal%20For%20Icon.svg",
+              "width" : 48
+            },
+            eyebrow="",
+            icon={
+              "name" : ""
+            },
+            icon_style="image",
+            settings={
+              "animation_type" : "fade-up",
+              "orientation" : "row"
+            },
+            style={
+              "alignment" : "left"
+            },
+            title=""
+          %}
+            {% module_attribute "content" %}
+              <p><span><strong>Ideal for:</strong> growing teams, teams with messy tech stacks, or evolving offers.</span></p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module
+            path="@hubspot/divider",
+            offset=0,
+            width=12,
+            styles={
+              "line" : {
+                "color" : {
+                  "color" : "#3e2c47",
+                  "opacity" : 100
+                }
+              },
+              "size" : {
+                "width" : 100
+              },
+              "spacing" : {
+                "spacing" : {
+                  "margin" : {
+                    "bottom" : {
+                      "units" : "px",
+                      "value" : 24
+                    },
+                    "top" : {
+                      "units" : "px",
+                      "value" : 24
+                    }
+                  }
+                }
+              }
+            }
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/content-block",
+            offset=0,
+            width=12,
+            eyebrow="Lead Boldly",
+            icon={
+              "name" : ""
+            },
+            settings={
+              "animation_type" : "fade-up"
+            },
+            title=""
+          %}
+            {% module_attribute "content" %}
+              <h3>Align your strategy and <em>scale with confidence.</em></h3>
+              <p>We align your marketing, sales, and ops with scalable processes, in-depth reporting, and strategic RevOps thinking — so your team can move faster, together.</p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/content-block",
+            offset=0,
+            width=12,
+            custom_icon={
+              "alt" : "Ideal For Icon",
+              "height" : 48,
+              "loading" : "lazy",
+              "max_height" : 48,
+              "max_width" : 48,
+              "size_type" : "exact",
+              "src" : "https://49609093.fs1.hubspotusercontent-na1.net/hubfs/49609093/Ideal%20For%20Icon.svg",
+              "width" : 48
+            },
+            eyebrow="",
+            icon={
+              "name" : ""
+            },
+            icon_style="image",
+            settings={
+              "animation_type" : "fade-up",
+              "orientation" : "row"
+            },
+            style={
+              "alignment" : "left"
+            },
+            title=""
+          %}
+            {% module_attribute "content" %}
+              <p><span><strong>Ideal for:</strong> businesses scaling headcount or revenue, or preparing for bigger growth goals.<br></span></p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

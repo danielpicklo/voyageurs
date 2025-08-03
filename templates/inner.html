@@ -1,16 +1,27 @@
 <!--
   templateType: page
   isAvailableForNewContent: true
-  label: Inner
+  label: Voyageurs - Inner page
 -->
 {% extends "./layouts/base.html" %}
 
 {% block body %}
 {% dnd_area "dnd_area"
   label="Main section",
-  class="body-container body-container--pricing"
+  class="body-container body-container--inner"
 %}
 
+  {# Hero banner #}
+
+  {% include_dnd_partial path="../sections/_hero-banner.html" %}
+
+  {# Scrolling content block #}
+
+  {% include_dnd_partial path="../sections/_scrolling-content-block.html" %}
+
+  {# Call to action #}
+
+  {% include_dnd_partial path="../sections/_call-to-action.html" %}
 
 {% end_dnd_area %}
 {% endblock body %}

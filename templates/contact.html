@@ -1,7 +1,7 @@
 <!--
   templateType: page
-  isAvailableForNewContent: false
-  label: Contact
+  isAvailableForNewContent: true
+  label: Voyageurs - Contact
   screenshotPath: ../images/template-previews/contact.png
 -->
 {% extends "./layouts/base.html" %}
@@ -12,9 +12,13 @@
   class="body-container body-container--contact"
 %}
 
-  {# Cards #}
+  {# Hero banner #}
 
-  {% include_dnd_partial path="../sections/cards.html" %}
+  {% include_dnd_partial path="../sections/_hero-banner.html" %}
+
+  {# Contact form #}
+
+  {% include_dnd_partial path="../sections/_form.html" %}
 
 {% end_dnd_area %}
 {% endblock body %}

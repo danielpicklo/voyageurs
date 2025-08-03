@@ -1,0 +1,138 @@
+<!--
+  templateType: section
+  label: Hero banner
+  isAvailableForNewContent: true
+  description: "Full width banner with animated image accents."
+-->
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12,
+    padding={
+      "default" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px"
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="./../modules/hero",
+        offset=0,
+        width=12,
+        content={
+          "button" : [ ],
+          "content" : "<p style=\"font-size: 22px; line-height: 1.5;\">Every business is on a journey—and we’re here to help you chart the path. Our services are designed to build systems, strategies, and experiences that scale. So, whether you're laying a foundation or fine-tuning your growth engine, we’ll help you move with clarity and purpose.</p>",
+          "eyebrow" : "",
+          "header" : "Choose Your Next <em>Strategic Move</em>",
+          "header_style" : "h2",
+          "image" : {
+            "accent" : {
+              "accent" : {
+                "alt" : "5 Dots",
+                "height" : 628,
+                "loading" : "lazy",
+                "max_height" : 628,
+                "max_width" : 649,
+                "size_type" : "auto",
+                "src" : "https://49609093.fs1.hubspotusercontent-na1.net/hubfs/49609093/5%20Dots.png",
+                "width" : 649
+              },
+              "accent_position" : "top_right"
+            },
+            "content_image" : {
+              "alt" : "Two pairs of hands pointing to locations on a detailed topographic map, with fingers tracing routes and landmarks — representing collaborative planning, route-finding, and shared strategy.",
+              "height" : 853,
+              "loading" : "lazy",
+              "max_height" : 853,
+              "max_width" : 1280,
+              "size_type" : "auto",
+              "src" : "https://49609093.fs1.hubspotusercontent-na1.net/hubfs/49609093/StrategicMove.jpeg",
+              "width" : 1280
+            },
+            "enable_accent_image" : true,
+            "enable_glass" : false
+          },
+          "subtitle" : ""
+        },
+        settings={
+          "animation_type" : "fade-up",
+          "background_image" : {
+            "src" : ""
+          },
+          "column_split" : 60,
+          "enable_accent_animation" : true,
+          "enable_accent_spin" : true,
+          "enable_overlay" : false,
+          "orientation" : "normal"
+        },
+        style={
+          "border" : {
+            "border" : {
+              "bottom" : {
+                "color" : "#3e2c47",
+                "opacity" : 100,
+                "style" : "solid",
+                "width" : {
+                  "units" : "px",
+                  "value" : 1
+                }
+              },
+              "left" : {
+                "color" : "#3e2c47",
+                "opacity" : 100,
+                "style" : "solid",
+                "width" : {
+                  "units" : "px",
+                  "value" : 1
+                }
+              },
+              "right" : {
+                "color" : "#3e2c47",
+                "opacity" : 100,
+                "style" : "solid",
+                "width" : {
+                  "units" : "px",
+                  "value" : 1
+                }
+              },
+              "top" : {
+                "color" : "#3e2c47",
+                "opacity" : 100,
+                "style" : "solid",
+                "width" : {
+                  "units" : "px",
+                  "value" : 1
+                }
+              }
+            },
+            "circular_image" : true
+          },
+          "spacing" : {
+            "padding" : {
+              "bottom" : { },
+              "left" : { },
+              "right" : { },
+              "top" : {
+                "units" : "px",
+                "value" : 0
+              }
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

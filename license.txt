@@ -1,3 +1,7 @@
-Add the license for your theme here.
+Copyright 2025 WEBSCOUTS
 
-To add a license to your theme you can either use a valid SPDX identifier (https://spdx.org/licenses/) for the license property in your theme.json file or you can update this file with your license as the license property in theme.json is already using the relative path option to link to this license file. For more information on the license property please reference this article (https://developers.hubspot.com/docs/cms/building-blocks/themes#theme-json).
+Permission is hereby granted, free of charge, to any person obtaining a copy of this theme and associated documentation files (the “Theme”), to deal in the Theme without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Theme, and to permit persons to whom the Theme is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Theme.
+
+THE THEME IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE THEME OR THE USE OR OTHER DEALINGS IN THE THEME.

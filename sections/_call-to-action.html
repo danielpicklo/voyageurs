@@ -1,0 +1,69 @@
+<!--
+  templateType: section
+  label: Call to action
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/call-to-action.png
+  description: "A section containing a call to action content block and button."
+-->
+{% dnd_section
+  padding={
+    "mobile" : {
+      "bottom" : "72px",
+      "top" : "72px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/content-block",
+        offset=0,
+        width=12,
+        button=[ {
+          "enable_ghost" : false,
+          "enable_gradient" : true,
+          "icon" : {
+            "name" : ""
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "content_id" : 189739044725,
+              "type" : "CONTENT"
+            }
+          },
+          "style" : "primary",
+          "text" : "Book Your Free Consultation"
+        } ],
+        custom_icon={
+          "alt" : "Soft Flower",
+          "height" : 72,
+          "loading" : "lazy",
+          "max_height" : 289,
+          "max_width" : 288,
+          "size_type" : "exact",
+          "src" : "https://49609093.fs1.hubspotusercontent-na1.net/hubfs/49609093/Soft%20Flower.png",
+          "width" : 72
+        },
+        eyebrow="",
+        icon_style="image",
+        settings={
+          "animation_type" : "fade-up",
+          "enable_spin" : true
+        },
+        style={
+          "alignment" : "center"
+        },
+        title="Ready to <em>Chart Your Path?</em>"
+      %}
+        {% module_attribute "content" %}
+          <p><span style="font-size: 22px;">Whether you're building from the ground up or optimizing for scale, we're here to guide the way. Book a free consultation and let’s explore how we can help your team grow with clarity, strategy, and systems that work.</span></p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
