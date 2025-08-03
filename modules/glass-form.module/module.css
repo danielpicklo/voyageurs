@@ -1,0 +1,8 @@
+.glass-form__container {
+  padding: 2rem;
+  width: 100%;
+}
+
+.glass-form__container form {
+  background-color: transparent;
+}

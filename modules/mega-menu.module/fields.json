@@ -1,0 +1,349 @@
+[ {
+  "id" : "365a884a-26a5-5738-ad64-33302d7c400c",
+  "name" : "menu",
+  "label" : "Menu",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu",
+  "display_width" : null,
+  "default" : 105441243194
+}, {
+  "id" : "34c6d0ea-524e-cb52-3def-30569c31d76c",
+  "name" : "mega_item",
+  "label" : "Mega Item",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "6fe52cd7-f834-68fc-0c1b-56dfe780b2d4",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "a787687f-945a-35c7-f436-838204fc66a4",
+    "name" : "match_url",
+    "label" : "Match URL",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "6fe52cd7-f834-68fc-0c1b-56dfe780b2d4",
+    "name" : "match_label",
+    "label" : "Match Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "9907a677-d43e-6837-f5f2-aca7a6d13889",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "2ca76fd3-57a4-192e-e64b-a88c8e50204b",
+    "name" : "heading_text",
+    "label" : "Heading Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null
+  }, {
+    "id" : "83f43f17-4357-a32f-5b81-f2c6eb32bf22",
+    "name" : "heading_link",
+    "label" : "Heading Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "79229aff-8fc8-0466-cc47-2bc375b4db97",
+    "name" : "invert_heading_order",
+    "label" : "Invert Heading Order",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "7e26da2b-ce87-951b-ea2e-2672491787c1",
+    "name" : "column_group",
+    "label" : "Column Group",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : 2,
+      "sorting_label_field" : "c7337c82-c1c1-d12c-83bf-47d5c7d63aef",
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "c7337c82-c1c1-d12c-83bf-47d5c7d63aef",
+      "name" : "column_heading",
+      "label" : "Column Heading",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "822d6065-8421-40ca-1d8e-8195782e7b26",
+      "name" : "column_item",
+      "label" : "Column Item",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : "6cb23fef-2a81-0eb2-3527-dcc10068123c",
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "6cb23fef-2a81-0eb2-3527-dcc10068123c",
+        "name" : "match_url",
+        "label" : "Match URL",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "87b8ec59-ee36-4039-f7c9-ccdc3d58cee2",
+        "name" : "match_label",
+        "label" : "Match Label",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "c63fb607-d540-d115-3089-483bcab3c120",
+        "name" : "text",
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Optional line of text to go here"
+      }, {
+        "id" : "510cd46f-b177-4d42-d4bd-501fdbec4154",
+        "name" : "use_icon",
+        "label" : "Use Icon or Image",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : true
+      }, {
+        "id" : "3dbef100-2458-04c6-bfda-2ae09a6334da",
+        "name" : "icon",
+        "label" : "Icon",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "mega_item.column_group.column_item.use_icon",
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "icon_set" : "fontawesome-5.14.0",
+        "type" : "icon",
+        "display_width" : null,
+        "default" : { }
+      }, {
+        "id" : "f3dc6913-d416-fd6c-dc8a-c77fabba6346",
+        "name" : "image",
+        "label" : "Image",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "mega_item.column_group.column_item.use_icon",
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "responsive" : true,
+        "resizable" : false,
+        "show_loading" : false,
+        "type" : "image",
+        "display_width" : null,
+        "default" : {
+          "size_type" : "auto",
+          "src" : "",
+          "alt" : null,
+          "loading" : "lazy"
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "text" : "Optional line of text to go here",
+        "use_icon" : true,
+        "icon" : { },
+        "image" : {
+          "size_type" : "auto",
+          "src" : "",
+          "alt" : null,
+          "loading" : "lazy"
+        }
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "column_item" : {
+        "text" : "Optional line of text to go here",
+        "use_icon" : true,
+        "icon" : { },
+        "image" : {
+          "size_type" : "auto",
+          "src" : "",
+          "alt" : null,
+          "loading" : "lazy"
+        }
+      }
+    }
+  }, {
+    "id" : "ebb785a6-0e4a-8bc9-1af4-1dd49536a16c",
+    "name" : "enable_shortcuts",
+    "label" : "Enable Shortcuts",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "0075f214-0ced-d5a4-b6be-6fc43c5cd510",
+    "name" : "shortcut",
+    "label" : "Shortcut",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : 3,
+      "sorting_label_field" : "5e52b095-2a95-62cb-7110-28b00d5db082",
+      "default" : null
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "mega_item.enable_shortcuts",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "5e52b095-2a95-62cb-7110-28b00d5db082",
+      "name" : "shortcut_text",
+      "label" : "Shortcut Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Lorem ipsum"
+    }, {
+      "id" : "ae619337-ab34-81d5-188e-4a380fd83807",
+      "name" : "shortcut_url",
+      "label" : "Shortcut URL",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+      "type" : "url",
+      "display_width" : null,
+      "default" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "shortcut_text" : "Lorem ipsum",
+      "shortcut_url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "heading_link" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "invert_heading_order" : false,
+    "column_group" : {
+      "column_item" : {
+        "text" : "Optional line of text to go here",
+        "use_icon" : true,
+        "icon" : { },
+        "image" : {
+          "size_type" : "auto",
+          "src" : "",
+          "alt" : null,
+          "loading" : "lazy"
+        }
+      }
+    },
+    "enable_shortcuts" : true,
+    "shortcut" : {
+      "shortcut_text" : "Lorem ipsum",
+      "shortcut_url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      }
+    }
+  }
+} ]

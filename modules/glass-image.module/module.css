@@ -1,0 +1,12 @@
+.glass-image__container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+  aspect-ratio: 1.25 / 1;
+}
+
+.glass-image__container img {
+  border-radius: var(--border-radius);
+}

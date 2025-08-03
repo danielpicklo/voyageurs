@@ -1,0 +1,35 @@
+
+{# CONTAINER #}
+<div id="{{ name }}" class="glass-image" {% if module.settings.animation_type != "none" %}data-aos="{{ module.settings.animation_type }}" data-aos-duration="{{ (module.settings.animation_duration * 1000)|int }}"{% endif %}>
+  <div class="glass-image__container glass">
+    <div class="glass-image__image">
+      <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" loading="{{ module.image.loading }}">
+    </div>
+  </div>
+</div>
+
+{# STYLES #}
+{% require_css %}
+<style>
+  {% scope_css %}
+
+    .glass-image__container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 2rem;
+      width: 100%;
+      aspect-ratio: 1.25 / 1;
+      background-color: rgba({{ module.style.colors.background_color.color|convert_rgb }}, {{ module.style.colors.background_color.opacity / 100 }});
+    }
+
+    .glass-image__container img {
+      max-width: 400px;
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+
+  {% end_scope_css %} 
+</style>
+{% end_require_css %}

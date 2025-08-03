@@ -1,0 +1,202 @@
+
+{# Data Pull #}
+{% set nodes = menu(module.menu) %}
+{% set node_data = module.mega_item %}
+
+{# Macros #}
+{% macro slugify(string) %}
+	{{ string|lower|replace(" ", "_")|replace("&", "and")|replace("/", "--")|trim }}
+{% endmacro %}
+
+{# Render a submenu column group #}
+{% macro render_column(column, nodes, group) %}
+
+{% set heading = column.column_heading %}
+{% set node_data = column.column_item %}
+{% set pages_in_column = [] %}
+
+{# Get pages we have in our column #}
+{% for item in node_data %}
+{% if item.match_url %}
+{% do pages_in_column.append(item.match_url) %}
+{% elif item.match_label %}
+{% do pages_in_column.append(item.match_label) %}
+{% endif %}
+{% endfor %}
+
+{# Create column #}
+<div class="column__wrapper">
+  {% if heading %}
+  <h4 class="{{ heading == " " or heading == group ? 'desktop--item' : '' }}">{{ heading || " " }}</h4>
+  {% endif %}
+  
+  <div class="column__inner">
+    
+    {# Use pages from column to grab our menu nodes for the column #}
+    {% for node in nodes %}
+    {% for page in pages_in_column %}
+    {% if node.url is string_containing page or node.label == page %}
+    {% for item in node_data %}
+
+    {% if item.match_url == page or item.match_label == page %}
+    {% set _node = item %}
+    
+    <div class="column__row">
+      <a class="column__item {{ heading == " " or heading == group  or !heading ? 'matched--header' : '' }} {{ node.children ? 'parent--item' : '' }}" href="{{ node.url || '#' }}" data-heading="{{ heading }}">
+        {% if _node.use_icon %}
+        <div class="column__item--icon desktop--itemr">
+          {% if _node.icon.name %}
+          {% icon name="{{ _node.icon.name }}" style="{{ _node.icon.type }}" unicode="{{ _node.icon.unicode }}" icon_set="{{ _node.icon.icon_set }}" %}
+          {% elif _node.image %}
+          <img src="{{ _node.image.src }}" alt="{{ _node.image.alt }}">
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="column__content">
+          <div class="column__content--label">{{ node.label }}</div>
+          <span class="column__content--text desktop--item">{{ _node.text }}</span>
+        </div>
+      </a>
+
+      {% if node.children %}
+      <div class="column__submenu"> 
+        {{ render_nav(node) }}
+      </div>
+      {% endif %}
+    </div>
+
+    {% endif %}
+
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+{% endmacro %}
+
+{# Render our links #}
+{% macro render_link(node) %}
+
+{% set path = node.url %}
+{% set title = node.label %}
+{% set data = [] %}
+
+{% for item in node_data %}
+  {% if item.match_label == title %}
+    {% do data.append(item) %}
+  {% endif %}
+{% endfor %}
+
+{# Individual menu element #}
+<div class="menu--item {{ node.children ? 'parent' : '' }} {{ slugify(title)|trim }} {{ data[0] ? 'mega' : '' }}">
+  
+  {% if node.children %}
+  <a class="menu--link accordion--link" href="#">{{ title }}</a>
+  <div class="menu__inner glass--50">
+    {% if data[0].heading_text %}
+    <div class="menu__header {{ data[0].invert_heading_order ? 'invert' : '' }}">
+      {% if data[0].image.src %}<a href="{{ data[0].heading_link.href }}"><img class="menu__header--image desktop--item" src="{{ data[0].image.src }}" alt="{{ title|trim }}"></a>{% endif %}
+      <a href="{{ data[0].heading_link.href }}"><div class="menu__header--content desktop--item">{{ data[0].heading_text }}</div></a>
+      
+      {% if data[0].heading_link.href %}
+      <a href="{{ data[0].heading_link.href }}" class="mobile--item"><div class="menu__header--content">{{ data[0].heading_text }}</div></a>
+      {% endif %}
+      
+    </div>
+    {% endif %}
+    <div class="menu__children {{ data[0].column_group|length == 1 ? 'col-count--1' : '' }}" style="grid-template-columns: repeat({{ data[0].column_group|length }}, 1fr);">
+      {% if data[0].column_group|length > 0 %}
+        {% for column in data[0].column_group %}
+          {{ render_column(column, node.children, title) }}
+        {% endfor %}
+      {% else %}
+      <div>
+        {{ render_nav(node) }}
+      </div>
+      {% endif %}
+    </div>
+    
+    {% if data[0].enable_shortcuts %}
+    <div class="menu__shortcuts desktop--item glass--50">
+    {% for shortcut in data[0].shortcut %}
+      <div class="menu__shortcuts--link" data-short="{{ shortcut }}" data-url="{{ shortcut.shortcut_url }}">
+        <a class="button button--link" href="{{ shortcut.shortcut_url.href }}">{{ shortcut.shortcut_text }}</a>
+      </div>
+      
+    {% endfor %}
+    </div>
+    {% endif %}
+    
+  </div>
+  
+  {% else %}
+  <a class="menu--link" href="{{ path }}">{{ title }}</a>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{# Render the navigation #}
+{% macro render_nav(nav) %}
+{% set level = level + 1 %}
+<div class="submenu level--{{ level }}" aria-hidden="{{ level != 1 }}">
+  {% for node in nav.children %}
+  {{ render_link(node) }}
+  {% endfor %}
+</div>
+{% endmacro %}
+
+{# Mega Menu HTML Block #}
+<div id="{{ name }}" class="mega-menu">
+
+  <div class="mobile--item">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mega-menu__container">
+    {{ render_nav(nodes) }}
+  </div>
+</div>
+
+{# STYLES #}
+{% require_css %}
+<style>
+  {% scope_css %}
+
+    
+
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+{# SCRIPTS #}
+{% require_js %}
+<script>
+  $(document).ready(function(){
+    
+    //Handle accordion click events
+    $('.menu--item.parent').on('click', function(e){
+      let $this = $(this);
+
+      if($this.is('.active')){
+        $this.removeClass('active')
+      }else{
+        $('.menu--item.parent').each(function(i, item){
+          $(this).removeClass('active');
+        })
+
+        $this.addClass('active');
+      }
+    })
+    
+    //Handle accordion click events
+    $('.column__item').on('click', function(e){
+      $(this).toggleClass('active');
+    })
+    
+  })
+</script>
+{% end_require_js %}

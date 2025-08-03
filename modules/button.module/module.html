@@ -1,0 +1,81 @@
+
+{# MACROS #}
+{% macro render_button(button) %}
+
+{% set href = button.link.url.href %}
+{% if button.link.url.type == "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% endif %}
+{% set rel = [] %}
+{% if button.link.no_follow %}
+  {% do rel.append("nofollow") %}
+{% endif %}
+{% if button.link.open_in_new_tab %}
+  {% do rel.append("noopener") %}
+{% endif %}
+
+<a class="button button--{{ button.style }} {{ button.enable_gradient ? 'gradient' : '' }} {{ button.enable_ghost ? 'ghost' : '' }}" href="{{ href|escape_url }}"
+   {% if button.link.open_in_new_tab %}target="_blank"{% endif %}
+   {% if rel %}rel="{{ rel|join(" ")|escape_attr }}"{% endif %}
+   >{{ button.button_text|escape_html }}
+  {% if button.icon.name %}
+  <span>
+    {% icon
+        name="{{ button.icon.name }}"
+        style="{{ button.icon.type }}"
+        unicode="{{ button.icon.unicode }}"
+        icon_set="{{ button.icon.icon_set }}"
+      %}
+  </span>
+  {% endif %}
+</a>
+{% endmacro %}
+
+{# CONTAINER #}
+<div id="{{ name }}" class="buttons" {% if module.settings.animation_type != "none" %}data-aos="{{ module.settings.animation_type }}" data-aos-duration="{{ (module.settings.animation_duration * 1000)|int }}"{% endif %}>
+  {% for button in module.button %}
+    {{ render_button(button) }}
+  {% endfor %}
+</div>
+
+{# STYLES #}
+{% require_css %}
+  <style>
+    {% scope_css %}
+
+      {# Button wrapper #}
+      {% if module.styles.alignment.alignment %}
+        .buttons {
+          justify-content: {{ module.styles.alignment.alignment.horizontal_align }};
+        }
+      {% endif %}
+
+      {# Button #}
+      .button {
+        {% if module.styles.background.color.color %}
+          background-color: rgba({{ module.styles.background.color.color|convert_rgb }}, {{ module.styles.background.color.opacity / 100 }});
+        {% endif %}
+        {{ module.styles.border.border.css }}
+        {% if module.styles.corner.radius >= 0 %}
+          border-radius: {{ module.styles.corner.radius ~ "px" }};
+        {% endif %}
+        {{ module.styles.text.font.css }}
+        {{ module.styles.spacing.spacing.css }}
+      }
+
+      .button:hover,
+      .button:focus {
+        {% if module.styles.background.color.color %}
+          background-color: rgba({{ color_variant(module.styles.background.color.color, -80)|convert_rgb }}, {{ module.styles.background.color.opacity / 100 }});
+        {% endif %}
+      }
+
+      .button:active {
+        {% if module.styles.background.color.color %}
+          background-color: rgba({{ color_variant(module.styles.background.color.color, 80)|convert_rgb }}, {{ module.styles.background.color.opacity / 100 }});
+        {% endif %}
+      }
+
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}

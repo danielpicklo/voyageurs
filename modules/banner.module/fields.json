@@ -1,0 +1,14 @@
+[ {
+  "id" : "0ff09b09-e751-56e8-6778-b5254e7d6cf5",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : { }
+} ]

@@ -1,0 +1,465 @@
+[ {
+  "id" : "9fdb68a9-247e-4e52-b421-60d99c80d195",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "370fb0bc-78b0-8c45-d734-eb6d0087fab7",
+    "name" : "alignment",
+    "label" : "Alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "right", "Right" ], [ "center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "left"
+  }, {
+    "id" : "2daf466e-c7dc-9034-d311-8fa41a172b62",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "a6f6c398-e4aa-7ef1-72bb-57eacf9d9218",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "a97610cb-fed3-350b-ad79-693e973461ec",
+    "name" : "border",
+    "label" : "Border",
+    "required" : false,
+    "locked" : false,
+    "allow_custom_border_sides" : false,
+    "type" : "border",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "1818e9de-c0ce-6891-1fb5-1882b244bede",
+    "name" : "colors",
+    "label" : "Colors",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "18f6fc70-54cf-8144-8127-f72fa91c3d5a",
+      "name" : "icon_color",
+      "label" : "Icon Color",
+      "required" : false,
+      "locked" : false,
+      "show_opacity" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    }, {
+      "id" : "a4f644e4-fc28-38ff-9fa2-daeb857b4428",
+      "name" : "background_color",
+      "label" : "Background Color",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "show_opacity" : true,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    }, {
+      "id" : "1bb3ae43-38c6-ca6a-6a49-bcea1cf9fd30",
+      "name" : "link_color",
+      "label" : "Link Color",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ], [ "tertiary", "Tertiary" ], [ "accent", "Accent" ], [ "light", "Light" ], [ "dark", "Dark" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "secondary"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "icon_color" : {
+        "color" : null,
+        "opacity" : 100
+      },
+      "background_color" : {
+        "color" : null,
+        "opacity" : 100
+      },
+      "link_color" : "secondary"
+    }
+  }, {
+    "id" : "a3be74db-8ada-c247-0500-38ed9977a063",
+    "name" : "fonts",
+    "label" : "Fonts",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "b3270325-03c9-bf71-5b6e-74127d479bcb",
+      "name" : "header_font",
+      "label" : "Header Font",
+      "required" : false,
+      "locked" : false,
+      "load_external_fonts" : true,
+      "type" : "font",
+      "display_width" : null,
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "header_font" : { }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "alignment" : "left",
+    "spacing" : { },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "border" : { },
+    "colors" : {
+      "icon_color" : {
+        "color" : null,
+        "opacity" : 100
+      },
+      "background_color" : {
+        "color" : null,
+        "opacity" : 100
+      },
+      "link_color" : "secondary"
+    },
+    "fonts" : {
+      "header_font" : { }
+    }
+  }
+}, {
+  "id" : "888f00d3-2466-d8f7-f043-7c4af021cd04",
+  "name" : "eyebrow",
+  "label" : "Eyebrow",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "A visually rich aesthetic that feels both familiar and futuristic"
+}, {
+  "id" : "c5ca3031-c0ad-6f07-7d28-e0032c390ab0",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Retro Glassmorphism"
+}, {
+  "id" : "12b27034-2429-ab56-09fd-589c8dc0b290",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Glassmorphism adds a modern, ethereal touch that contrasts beautifully with the bold, saturated colors of 1970s and 1980s retro design. When layered over warm rainbow palettes and soft off-white backgrounds, the translucent elements evoke a sense of depth without overpowering the nostalgic vibe. Rounded edges and frosted panels complement the era’s signature curves and playful energy, blending past and present seamlessly.</p>"
+}, {
+  "id" : "cc96a989-7576-3b3b-361d-cec852a664c9",
+  "name" : "icon_style",
+  "label" : "Icon Style",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "icon", "Icon" ], [ "image", "Image" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "icon"
+}, {
+  "id" : "db5a790d-0a53-9949-3a82-0d245220aa17",
+  "name" : "icon",
+  "label" : "Icon",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "icon_style",
+    "controlling_value_regex" : "icon",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "icon_set" : "fontawesome-5.14.0",
+  "type" : "icon",
+  "display_width" : null,
+  "default" : {
+    "name" : "Retro Camera",
+    "unicode" : "f083",
+    "type" : "SOLID"
+  }
+}, {
+  "id" : "2455be8e-cc6f-ffa9-9916-b5023bcaad33",
+  "name" : "custom_icon",
+  "label" : "Custom Icon",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "icon_style",
+    "controlling_value_regex" : "image",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "e2fafd85-e86f-026d-6ae2-a237df89bd12",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "9c9e07a1-3bb2-eb3b-989d-5a8dfc86cfdc",
+    "default" : 0
+  },
+  "children" : [ {
+    "id" : "9c9e07a1-3bb2-eb3b-989d-5a8dfc86cfdc",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "b58652e8-1b3e-1b89-3055-7cf69620f1ff",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "09897e9f-5d68-5166-b080-4b0fb846f8da",
+    "name" : "style",
+    "label" : "Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ], [ "tertiary", "Tertiary" ], [ "accent", "Accent" ], [ "light", "Light" ], [ "dark", "Dark" ], [ "link", "Link" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "primary"
+  }, {
+    "id" : "ac4d16dd-47a2-7e76-2051-330e9a6f4e19",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.14.0",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "chevron-right",
+      "unicode" : "f054",
+      "type" : "SOLID"
+    }
+  }, {
+    "id" : "e1b3341d-cd3d-c2cf-1610-3e70d30bfff0",
+    "name" : "enable_gradient",
+    "label" : "Enable Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "button.enable_ghost",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "NOT_EQUAL",
+      "access" : null
+    },
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "7b868685-5809-fa0b-e9a4-c308d5e57d73",
+    "name" : "enable_ghost",
+    "label" : "Enable Ghost",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "button.enable_gradient",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "NOT_EQUAL",
+      "access" : null
+    },
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "5a7c5224-27e4-c7b3-10cc-51d05b971361",
+  "name" : "settings",
+  "label" : "Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "d4719a23-53ea-3bda-a3c7-30216244a3d8",
+    "name" : "orientation",
+    "label" : "Orientation",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "stacked", "Stacked" ], [ "row", "Row" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "stacked"
+  }, {
+    "id" : "5a25cb25-3b09-1d70-d779-9e68340d8cd4",
+    "name" : "enable_glass",
+    "label" : "Enable Glass",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "9a141cab-1492-4d4c-9618-ba6c042be878",
+    "name" : "enable_spin",
+    "label" : "Enable Spin",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "10ffe220-388c-002e-4f7e-a7742f28efe9",
+    "name" : "animation_type",
+    "label" : "Animation Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "none", "None" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "none"
+  }, {
+    "id" : "04bc19ef-5408-0548-1903-e2256340fed4",
+    "name" : "animation_duration",
+    "label" : "Animation Duration",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 6,
+    "step" : 0.1,
+    "suffix" : "s",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 1.2
+  }, {
+    "id" : "05973578-8e92-3737-e692-927e897ed33e",
+    "name" : "scroll_lock",
+    "label" : "Scroll Lock",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "orientation" : "stacked",
+    "enable_glass" : false,
+    "enable_spin" : false,
+    "animation_type" : "none",
+    "animation_duration" : 1.2,
+    "scroll_lock" : false
+  }
+} ]

@@ -1,0 +1,160 @@
+
+{# IMPORTS #}
+{% from '../../templates/partials/_functions.html' import
+  icons,
+  safe_slugify
+%}
+
+{# MACROS #}
+{% macro render_button(button) %}
+
+{% set href = button.link.url.href %}
+{% if button.link.url.type == "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% endif %}
+{% set rel = [] %}
+{% if button.link.no_follow %}
+  {% do rel.append("nofollow") %}
+{% endif %}
+{% if button.link.open_in_new_tab %}
+  {% do rel.append("noopener") %}
+{% endif %}
+
+<a class="button button--{{ button.style }} {{ button.enable_gradient ? 'gradient' : '' }} {{ button.enable_ghost ? 'ghost' : '' }}" href="{{ href|escape_url }}"
+   {% if button.link.open_in_new_tab %}target="_blank"{% endif %}
+   {% if rel %}rel="{{ rel|join(" ")|escape_attr }}"{% endif %}
+   >{{ button.text|escape_html }}
+  {% if button.icon.name %}
+  <span>
+    {% icon
+        name="{{ button.icon.name }}"
+        style="{{ button.icon.type }}"
+        unicode="{{ button.icon.unicode }}"
+        icon_set="{{ button.icon.icon_set }}"
+      %}
+  </span>
+  {% endif %}
+</a>
+{% endmacro %}
+
+{# CONTAINER #}
+<div id="{{ name }}" class="content-block {{ module.settings.scroll_lock ? 'scroll-locked' : '' }}" {% if module.settings.animation_type != "none" %}data-aos="{{ module.settings.animation_type }}" data-aos-duration="{{ (module.settings.animation_duration * 1000)|int }}"{% endif %} data-scroll-lock="{{ module.settings.scroll_lock }}">
+  <div class="content-block__container {{ module.settings.enable_glass ? 'glass' : '' }} {{ module.settings.orientation }}">
+
+    {% if module.icon_style == "icon" and module.icon.name %}
+    <div class="content-block__icon {{ module.settings.enable_spin ? 'animation--spin' : '' }}">
+      {% icon
+        name="{{ module.icon.name }}"
+        style="{{ module.icon.type }}"
+        unicode="{{ module.icon.unicode }}"
+        icon_set="{{ module.icon.icon_set }}"
+      %}
+    </div>
+    {% elif module.icon_style == "image" and module.custom_icon.src %}
+    {% set sizeAttrs = 'width="{{ module.custom_icon.width|escape_attr }}" height="{{ module.custom_icon.height|escape_attr }}"' %}
+    {% if module.custom_icon.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.custom_icon.width|escape_attr }}" height="{{ module.custom_icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+    {% elif module.custom_icon.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.custom_icon.max_width|escape_attr }}" height="{{ module.custom_icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+    {% endif %}
+    {% set loadingAttr = module.custom_icon.loading != 'disabled' ? 'loading="{{ module.custom_icon.loading|escape_attr }}"' : '' %}
+    <div class="content-block__icon {{ module.settings.enable_spin ? 'animation--spin' : '' }}">
+      <img src="{{ module.custom_icon.src }}" alt="{{ module.custom_icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    </div>
+    {% endif %}
+
+    <div class="content-block__content">
+      {% if module.eyebrow %}
+        <div class="eyebrow">{{ module.eyebrow }}</div>
+      {% endif %}
+      {% if module.title %}
+        <h2>{{ module.title }}</h2>
+      {% endif %}
+      {% if module.content %}
+        <div>{{ module.content }}</div>
+      {% endif %}
+      <div class="content-block__buttons">
+        {% for button in module.button %}
+          {{ render_button(button) }}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{# STYLES #}
+{% require_css %}
+<style>
+  {% scope_css %}
+  
+  .content-block__container{
+    align-items: {{ module.style.alignment }};
+    text-align: {{ module.style.alignment }};
+    background-color: rgba({{ module.style.colors.background_color.color|convert_rgb }}, {{ module.style.colors.background_color.opacity / 100 }});
+    {% if module.style.border != "none" %}
+      {{ module.style.border.css }}
+    {% endif %}
+    {{ module.style.background_image.css }}
+    {{ module.style.spacing.css }}
+  }
+
+  .content-block__container h2{
+    {{ module.style.fonts.header_font.css }}
+  }
+
+  .content-block__container a.button--link{
+    color: var(--{{ module.style.colors.link_color }}-color);
+  }
+
+  @media  screen and (min-width: 992px){
+    .content-block__container:not(.row) .content-block__buttons{
+      justify-content: {{ module.style.alignment }};
+    }
+  }
+
+  .content-block__icon svg,
+  .content-block__icon svg path {
+    fill: {{ module.style.colors.icon_color.color }};
+  }
+
+  @media  screen and (max-width: 991px){
+    .content-block__container.row .content-block__buttons,
+    .content-block__container:not(.row) .content-block__buttons{
+      justify-content: {{ module.style.alignment }};
+    }
+  }
+  
+  
+
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+{% require_js %}
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js?v=3.3.0-3"></script>
+<script>
+  {% if module.settings.scroll_lock %}
+    {% set module_name = safe_slugify(name)|trim %}
+  
+    gsap.registerPlugin(ScrollTrigger);
+    var contentBlock_{{ module_name }} = document.querySelector(`#{{ name }} .content-block__container`);
+    var parentColumn_{{ module_name }} = contentBlock_{{ module_name }}.closest('.dnd-column');
+    
+    if (window.innerWidth >= 992 && parentColumn_{{ module_name }}) {
+      var columnHeight_{{ module_name }} = parentColumn_{{ module_name }}.offsetHeight;
+      
+      gsap.to(contentBlock_{{ module_name }}, {
+        scrollTrigger: {
+          trigger: parentColumn_{{ module_name }},
+          start: 'top 40%',
+          end: () => `+=${columnHeight_{{ module_name }} - contentBlock_{{ module_name }}.offsetHeight}`,
+          pin: true,
+          pinSpacing: false,
+          scrub: true
+        }
+      });
+    }
+  {% endif %}
+</script>
+{% end_require_js %}

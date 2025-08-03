@@ -1,0 +1,341 @@
+button,
+.button,
+.hs-button {
+  border: 1px solid;
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  transition: all 0.15s linear;
+  white-space: normal;
+  text-decoration: none;
+  text-transform: var(--button-text-transform);
+  border-radius: var(--button-border-radius);
+}
+
+button:hover,
+.button:hover,
+.hs-button:hover {
+  text-decoration: none;
+}
+
+button:disabled,
+.button:disabled,
+.hs-button:disabled {
+  background-color: #D0D0D0;
+  border-color: #D0D0D0;
+  color: #E6E6E6;
+}
+
+/* Button Icons */
+
+button svg,
+.button svg,
+.hs-button svg {
+  fill: var(--light-color);
+  width: 16px;
+  height: 16px;
+}
+
+button > span:has(svg),
+.button > span:has(svg),
+.hs-button > span:has(svg) {
+  display: inline-block;
+  line-height: 1;
+  opacity: 0;
+  width: 0;
+  margin-left: 0;
+  transition: all 0.3s ease-out;
+}
+
+button > span:has(svg) span,
+.button > span:has(svg) span,
+.hs-button > span:has(svg) span {
+  line-height: 0;
+  display: block;
+}
+
+button:hover > span:has(svg),
+.button:hover > span:has(svg),
+.hs-button:hover > span:has(svg) {
+  opacity: 1;
+  width: auto;
+  margin-left: 1rem;
+  transition: all 0.15s ease-out;
+}
+
+/* Primary Button */
+
+a.button--primary{
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+a.button--primary:hover,
+a.button--primary:focus,
+a.button--primary:active {
+  background-color: var(--dark-color);
+  border-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+/* Secondary Button */
+
+a.button--secondary{
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--light-color);
+}
+
+a.button--secondary:hover,
+a.button--secondary:focus,
+a.button--secondary:active {
+  background-color: var(--secondary-color-alt);
+  border-color: var(--secondary-color-alt);
+  color: var(--light-color);
+}
+
+/* Tertiary Button */
+
+a.button--tertiary{
+  background-color: var(--tertiary-color);
+  border-color: var(--tertiary-color);
+  color: var(--light-color);
+}
+
+a.button--tertiary:hover,
+a.button--tertiary:focus,
+a.button--tertiary:active {
+  background-color: var(--tertiary-color-alt);
+  border-color: var(--tertiary-color-alt);
+  color: var(--light-color);
+}
+
+/* Accent Button */
+
+a.button--accent{
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--light-color);
+}
+
+a.button--accent:hover,
+a.button--accent:focus,
+a.button--accent:active {
+  background-color: var(--accent-color-alt);
+  border-color: var(--accent-color-alt);
+  color: var(--light-color);
+}
+
+/* Light Button */
+
+a.button--light{
+  background-color: var(--light-color);
+  border-color: var(--light-color);
+  color: var(--dark-color);
+} 
+
+a.button--light:hover,
+a.button--light:focus,
+a.button--light:active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--light-color);  
+}
+
+/* Dark Button */
+
+a.button--dark{
+  background-color: var(--dark-color);
+  border-color: var(--dark-color);  
+  color: var(--light-color);
+}
+
+a.button--dark:hover,
+a.button--dark:focus,
+a.button--dark:active { 
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+/* Ghost Buttons */
+
+a.button--primary.ghost{
+  background-color: transparent;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+a.button--primary.ghost:hover,
+a.button--primary.ghost:focus,
+a.button--primary.ghost:active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+a.button--secondary.ghost{
+  background-color: transparent;
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+a.button--secondary.ghost:hover,
+a.button--secondary.ghost:focus,
+a.button--secondary.ghost:active {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--light-color);
+}
+
+a.button--tertiary.ghost{
+  background-color: transparent;
+  border-color: var(--tertiary-color);
+  color: var(--tertiary-color);
+} 
+
+a.button--tertiary.ghost:hover,
+a.button--tertiary.ghost:focus,
+a.button--tertiary.ghost:active {
+  background-color: var(--tertiary-color);
+  border-color: var(--tertiary-color);
+  color: var(--light-color);
+}
+
+a.button--accent.ghost{
+  background-color: transparent;
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+a.button--accent.ghost:hover,
+a.button--accent.ghost:focus,
+a.button--accent.ghost:active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--light-color);
+}
+
+a.button--light.ghost{
+  background-color: transparent;
+  border-color: var(--light-color);
+  color: var(--light-color);
+}
+
+a.button--light.ghost:hover,
+a.button--light.ghost:focus,
+a.button--light.ghost:active {  
+  background-color: var(--light-color);
+  border-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+a.button--dark.ghost{
+  background-color: transparent;
+  border-color: var(--dark-color);
+  color: var(--dark-color);
+} 
+
+a.button--dark.ghost:hover,
+a.button--dark.ghost:focus,
+a.button--dark.ghost:active {
+  background-color: var(--dark-color);
+  border-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+/* Link Button */
+
+a.button--link{
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--secondary-color);
+}
+
+a.button--link:hover,
+a.button--link:focus,
+a.button--link:active {
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--tertiary-color);
+}
+
+/* Gradient Button Reset */
+
+a.button.gradient,
+a.button.gradient,
+a.button.gradient {
+  border: none;
+}
+
+/* Gradient Primary Button */
+
+a.button--primary.gradient {
+  background: linear-gradient(90deg, var(--primary-color), var(--dark-color));
+  color: var(--light-color);
+}
+
+a.button--primary.gradient:hover,
+a.button--primary.gradient:focus,
+a.button--primary.gradient:active {
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-color));
+  color: var(--light-color);
+}
+
+/* Gradient Secondary Button */
+
+a.button--secondary.gradient {
+  background: linear-gradient(90deg, var(--secondary-color), var(--dark-color));
+  color: var(--light-color);
+} 
+
+a.button--secondary.gradient:hover,
+a.button--secondary.gradient:focus,
+a.button--secondary.gradient:active {
+  background: linear-gradient(90deg, var(--primary-color), var(--dark-color));
+  color: var(--light-color);
+}
+
+/* Gradient Tertiary Button */
+
+a.button--tertiary.gradient {
+  background: linear-gradient(90deg, var(--tertiary-color), var(--dark-color));
+  color: var(--light-color);
+}
+
+a.button--tertiary.gradient:hover,
+a.button--tertiary.gradient:focus,
+a.button--tertiary.gradient:active {
+  background: linear-gradient(90deg, var(--secondary-color), var(--dark-color));
+  color: var(--light-color);
+}
+
+/* No button */
+.no-button,
+.no-button:hover,
+.no-button:focus,
+.no-button:active {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: initial;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  transition: none;
+}

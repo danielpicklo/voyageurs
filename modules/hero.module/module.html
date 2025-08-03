@@ -1,0 +1,130 @@
+{# IMPORTS #}
+{% from '../../templates/partials/_functions.html' import
+  icons
+%}
+
+{# DATA #}
+
+
+{# CONTAINER #}
+<div id="{{ name }}" class="hero">
+  {% if module.settings.background_image.src %}
+    <div class="hero__image">
+      <img src="{{ module.settings.background_image.src }}" alt="{{ module.settings.background_image.alt }}" loading="eager">
+    </div>
+  {% endif %}
+  {% if module.settings.enable_overlay %}
+    <div class="hero--overlay"></div>
+  {% endif %}
+  <div class="hero__container content-wrapper" {% if module.settings.animation_type != "none" %}data-aos="{{ module.settings.animation_type }}" data-aos-duration="{{ (module.settings.animation_duration * 1000)|int }}"{% endif %}>
+    <div class="hero__column">
+      <div class="hero__content">
+        <div class="eyebrow">{{ module.content.eyebrow }}</div>
+        <{{ module.content.header_style }}>{{ module.content.header }}</{{ module.content.header_style }}>
+        <div>{{ module.content.content }}</div>
+        <div class="hero__buttons">
+          {% for button in module.content.button %}
+            <a href="{{ button.url.href }}" class="button button--{{ button.style }} {{ button.enable_gradient ? 'gradient' : '' }} {{ button.enable_ghost ? 'ghost' : '' }}">{{ button.text }}<span>
+            {% if button.icon.name %}
+              {% icon
+                  name="{{ button.icon.name }}"
+                  style="{{ button.icon.type }}"
+                  unicode="{{ button.icon.unicode }}"
+                  icon_set="{{ button.icon.icon_set }}"
+                %}
+              </span>
+            {% endif %}
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% if module.content.image.content_image.src %}
+      <div class="hero__column">
+        <div class="hero__content-image {{ module.content.image.enable_glass ? 'glass' : '' }}">
+          <img src="{{ module.content.image.content_image.src }}" alt="{{ module.content.image.content_image.alt }}">
+          {% if module.content.image.enable_accent_image %}
+            <img class="hero__accent-image {{ module.settings.enable_accent_spin ? 'animation--spin' : '' }}" src="{{ module.content.image.accent.accent.src }}" alt="{{ module.content.image.accent.accent.alt }}">
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{#{{ module.style.spacing }}#}
+
+{# STYLES #}
+{% require_css %}
+<style>
+  {% scope_css %}
+
+    .hero{
+      {{ module.style.spacing.css }}
+    }
+  
+    .hero--overlay{
+      background-color: rgba({{ module.style.colors.overlay_color.color|convert_rgb }}, {{ module.style.colors.overlay_color.opacity / 100 }});
+      z-index: 1;
+    }
+
+    .hero__container{
+      grid-template-columns: {{ module.settings.column_split }}% {{ 100 - module.settings.column_split }}%;
+    }
+
+    .hero__column:first-of-type{
+      order: {{ module.settings.orientation == 'normal' ? 1 : 2 }};
+    }
+
+    .hero__column:last-of-type{
+      order: {{ module.settings.orientation == 'normal' ? 2 : 1 }};
+    }
+
+    .hero__content-image img:not(.hero__accent-image){
+      {% if module.style.border.circular_image %}
+        border-radius: 50%;
+      {% endif %}
+      {% if module.style.border.border and module.style.border.border != "none" %}
+        {{ module.style.border.border.css }}
+      {% endif %}
+    }
+
+    .hero__content-image{
+      background-color: rgba({{ module.style.colors.glass_color.color|convert_rgb }}, {{ module.style.colors.glass_color.opacity / 100 }});
+    }
+
+    .hero__accent-image{
+      {% if module.content.image.accent.accent_position == 'top_left' %}
+        top: 1rem;
+        left: 1rem;
+      {% elif module.content.image.accent.accent_position == 'top_right' %}
+        top: 1rem;
+        right: 0;
+      {% elif module.content.image.accent.accent_position == 'bottom_left' %}
+        bottom: 1rem;
+        left: 1rem;
+      {% elif module.content.image.accent.accent_position == 'bottom_right' %}
+        bottom: 1rem;
+        right: 1rem;
+      {% endif %}
+    }
+  
+  @media screen and (max-width: 767px){
+    .hero{
+      padding-top: 4.5rem;
+      padding-bottom: 4.5rem;
+    }
+    
+    .hero__container.content-wrapper{
+      grid-template-columns: 1fr;
+    }
+  }
+
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+{# SCRIPTS #}
+{% require_js, { position: "footer" } %}
+<script></script>
+{% end_require_js %}

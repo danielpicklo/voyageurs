@@ -1,0 +1,133 @@
+[ {
+  "id" : "9a2a7ada-6dea-9a28-fff1-85015d524d65",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "dbdcadb8-f1aa-5726-3c67-a084d8bda4de",
+    "name" : "border",
+    "label" : "Border",
+    "required" : false,
+    "locked" : false,
+    "allow_custom_border_sides" : false,
+    "type" : "border",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "db93c0ed-a267-a8e4-9bdc-7a298da020eb",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "a15b4d97-3cbc-ce0a-defa-dc6638187509",
+    "name" : "colors",
+    "label" : "Colors",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "0747bbe2-e586-6b95-ac3b-5ce92c3e0fb1",
+      "name" : "background_color",
+      "label" : "Background Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "background_color" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "border" : { },
+    "colors" : {
+      "background_color" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }
+  }
+}, {
+  "id" : "46688b6e-c313-5cba-55e2-34a4cae3fb3d",
+  "name" : "form",
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "embed_versions" : [ "v2", "v4" ],
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : "ed807858-da9a-4279-a5c3-d4cf6a180c2d",
+    "response_type" : "inline",
+    "message" : "Thank you for your message! You'll hear from us soon.",
+    "gotowebinar_webinar_key" : null,
+    "webinar_id" : null,
+    "webinar_source" : null,
+    "form_type" : "HUBSPOT"
+  }
+}, {
+  "id" : "2e73d778-c7ba-dde8-a94b-72b58548216c",
+  "name" : "settings",
+  "label" : "Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "55af0eab-ba73-0a19-dce7-a7a349134b36",
+    "name" : "animation_type",
+    "label" : "Animation Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "none", "None" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "none"
+  }, {
+    "id" : "b1295d49-e8ff-afce-389d-519400e80d54",
+    "name" : "animation_duration",
+    "label" : "Animation Duration",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 6,
+    "step" : 0.01,
+    "suffix" : "s",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 1.2
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "animation_type" : "none",
+    "animation_duration" : 1.2
+  }
+} ]

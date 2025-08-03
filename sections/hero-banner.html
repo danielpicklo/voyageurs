@@ -1,0 +1,85 @@
+<!--
+  templateType: section
+  label: Hero banner
+  isAvailableForNewContent: true
+  description: "Full size background image section separated in two columns. Left column has heading and text and right column has an image."
+-->
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12,
+    padding={
+      "default" : {
+        "left" : "0px",
+        "right" : "0px"
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="/centaur/modules/hero",
+        offset=0,
+        width=12,
+        content={
+          "button" : [ {
+            "style" : "primary",
+            "text" : "Learn More",
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }, {
+            "style" : "secondary",
+            "text" : "Contact Us",
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }, {
+            "style" : "link",
+            "text" : "Join The Collective",
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          } ],
+          "content" : "<p>Freelancers and HubSpot consultants unite to form an innovative collective agency, revolutionizing traditional agency structures.</p>",
+          "image" : {
+            "content_image" : {
+              "alt" : "computer",
+              "height" : 1024,
+              "max_height" : 1024,
+              "max_width" : 1536,
+              "src" : "https://49609093.fs1.hubspotusercontent-na1.net/hubfs/49609093/computer.webp",
+              "width" : 1536
+            }
+          }
+        },
+        settings={
+          "background_image" : {
+            "alt" : "centaur-banner",
+            "height" : 1080,
+            "loading" : "lazy",
+            "max_height" : 1080,
+            "max_width" : 1920,
+            "size_type" : "auto",
+            "src" : "https://49609093.fs1.hubspotusercontent-na1.net/hubfs/49609093/Centaur/centaur-banner.webp",
+            "width" : 1920
+          },
+          "enable_overlay" : false
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
