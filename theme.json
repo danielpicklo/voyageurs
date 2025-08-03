@@ -18,7 +18,7 @@
     "email" : "hello@thewebscouts.com",
     "url" : "https://thewebscouts.com"
   },
-  "documentation_url" : "https://developers.hubspot.com/docs/cms/building-blocks/themes/hubspot-cms-boilerplate",
+  "documentation_url" : "https://github.com/danielpicklo/voyageurs/blob/main/README.md",
   "example_url" : "https://thewebscouts.com/",
   "license" : "./license.txt"
 }
