@@ -1,0 +1,166 @@
+[ {
+  "id" : "82495cbf-288e-de92-d1bb-dd6ec7e09e3c",
+  "name" : "tabs",
+  "label" : "Tabs",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "f4d2776b-f5bc-50a8-6a3f-23a255df8150",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "f4d2776b-f5bc-50a8-6a3f-23a255df8150",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Lorem ipsum"
+  }, {
+    "id" : "82e47d4d-02a3-4a0d-7403-8b243ff4e602",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Lorem ipsum dolor sit amet.</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "title" : "Lorem ipsum",
+    "content" : "<p>Lorem ipsum dolor sit amet.</p>"
+  } ]
+}, {
+  "id" : "92c19911-5ab7-a8ad-c88b-cb26c684362f",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "40ea92f7-65b5-3a84-b3ff-bab2132aa63e",
+    "name" : "colors",
+    "label" : "Colors",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "28562198-b581-cdec-2760-06ed6cbe4cf8",
+      "name" : "icon_color",
+      "label" : "Icon Color",
+      "required" : false,
+      "locked" : false,
+      "show_opacity" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    }, {
+      "id" : "5e7d676d-3ce8-a983-7903-94fd0620ad12",
+      "name" : "separator_color",
+      "label" : "Separator Color",
+      "required" : false,
+      "locked" : false,
+      "show_opacity" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#E9EAEB",
+        "opacity" : 100
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "icon_color" : {
+        "color" : null,
+        "opacity" : 100
+      },
+      "separator_color" : {
+        "color" : "#E9EAEB",
+        "opacity" : 100
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "colors" : {
+      "icon_color" : {
+        "color" : null,
+        "opacity" : 100
+      },
+      "separator_color" : {
+        "color" : "#E9EAEB",
+        "opacity" : 100
+      }
+    }
+  }
+}, {
+  "id" : "a2e8f3ae-a984-e216-ebc8-99aacbb4882b",
+  "name" : "settings",
+  "label" : "Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ca92c06c-5eda-82bc-cda0-52cee556d4d1",
+    "name" : "closed_icon",
+    "label" : "Closed Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-6.4.2",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "Circle Plus",
+      "unicode" : "f055",
+      "type" : "SOLID"
+    }
+  }, {
+    "id" : "f8ad5289-bf26-0a4c-dcc1-fc566e25ffad",
+    "name" : "open_icon",
+    "label" : "Open Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-6.4.2",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "Circle Minus",
+      "unicode" : "f056",
+      "type" : "SOLID"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "closed_icon" : {
+      "name" : "Circle Plus",
+      "unicode" : "f055",
+      "type" : "SOLID"
+    },
+    "open_icon" : {
+      "name" : "Circle Minus",
+      "unicode" : "f056",
+      "type" : "SOLID"
+    }
+  }
+} ]

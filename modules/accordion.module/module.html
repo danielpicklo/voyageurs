@@ -1,0 +1,65 @@
+
+{# DATA #}
+{% set accordion_tabs = module.tabs %}
+
+{# MACROS #}
+{% macro render_tab(tab, index) %}
+<div class="tab">
+  <div class="tab__header">
+    <h4>{{ tab.title }}</h4>
+    <div class="tab__icons">
+      <div class="tab--icon icon--closed">
+        {% icon
+          name="{{ module.settings.closed_icon.name }}"
+          style="{{ module.settings.closed_icon.type }}"
+          unicode="{{ module.settings.closed_icon.unicode }}"
+          icon_set="{{ module.settings.closed_icon.icon_set }}"
+        %}
+      </div>
+      <div class="tab--icon icon--opened">
+        {% icon
+          name="{{ module.settings.open_icon.name }}"
+          style="{{ module.settings.open_icon.type }}"
+          unicode="{{ module.settings.open_icon.unicode }}"
+          icon_set="{{ module.settings.open_icon.icon_set }}"
+        %}
+      </div>
+    </div>
+    <input name="{{ name }}" type="radio" {{ index == 1 ? 'checked' : '' }}>
+  </div>
+  
+  <div class="tab__content">{{ tab.content }}</div>
+</div>
+{% endmacro %}
+
+{# CONTAINER #}
+<div id="{{ name }}" class="accordion">
+  {% for tab in accordion_tabs %}
+    {{ render_tab(tab, loop.index) }}
+  {% endfor %}
+</div>
+
+{# SCRIPT #}
+{% require_js, position="footer" %}
+<script>
+  
+</script>
+{% end_require_js %}
+
+{# STYLES #}
+{% require_css %}
+<style>
+  {% scope_css %}
+  
+  .tab{
+    border-bottom: 1px solid {{ module.style.colors.separator_color.color }};
+  }
+  
+  .tab--icon,
+  .tab--icon svg{
+    fill: {{ module.style.colors.icon_color.color }};
+  }
+  
+  {% end_scope_css %}
+</style>
+{% end_require_css %}

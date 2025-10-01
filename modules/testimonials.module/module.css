@@ -1,0 +1,87 @@
+.testimonials{
+  position: relative;
+}
+
+.testimonials--quote{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonials__listing{
+  margin: 2rem 5rem;
+}
+
+.testimonial{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonial--quote p{
+  font-size: 1.33rem;
+  line-height: 2rem;
+}
+
+.testimonial--person{
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial > a{
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.slick-arrow{
+  position: absolute;
+  top: 25%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+}
+
+.slick-arrow svg{
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+}
+
+.slick-arrow.prev{
+  left: -6rem;
+}
+
+.slick-arrow.next{
+  right: -6rem;
+}
+
+@media screen and (max-width: 767px){
+  .testimonials__listing{
+    margin: 2rem 3rem;
+  }
+
+  .testimonial--quote p{
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+
+  .slick-arrow.prev{
+    left: -3rem;
+  }
+
+  .slick-arrow.next{
+    right: -3rem;
+  }
+
+  .slick-arrow{
+    width: 2rem;
+    height: 2rem;
+  }
+
+}
