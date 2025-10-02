@@ -52,8 +52,6 @@
   </div>
 </div>
 
-{#{{ module.style.spacing }}#}
-
 {# STYLES #}
 {% require_css %}
 <style>
@@ -78,6 +76,17 @@
 
     .hero__column:last-of-type{
       order: {{ module.settings.orientation == 'normal' ? 2 : 1 }};
+    }
+  
+    .hero__content{
+      {{ module.style.textalignment_field.css }}
+    }
+  
+    .hero__content h1,
+    .hero__content h2,
+    .hero__content h3,
+    .hero__content h4{
+      color: {{ module.style.colors.header_color.color }};
     }
 
     .hero__content-image img:not(.hero__accent-image){
